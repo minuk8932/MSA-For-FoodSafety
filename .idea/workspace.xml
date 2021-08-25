@@ -23,8 +23,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="afa31d55-2b42-4787-b0ba-db5f2eefbb79" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/open-api-nutrient/src/main/java/com/example/service/OpenApiServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/open-api-nutrient/src/main/java/com/example/service/OpenApiServiceImpl.java" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/open-api-nutrient/src/main/java/com/example/configuration/OpenApiConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/open-api-nutrient/src/main/java/com/example/configuration/OpenApiConfig.java" afterDir="false" />
+>>>>>>> d62748338e2b79cc0dbb7783a693b7d08c5e19e9
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,6 +195,7 @@
       <screen x="-1920" y="-33" width="1920" height="1080" />
     </state>
     <state x="-1267" y="195" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.900/-1920.-33.1920.1080@-1920.-33.1920.1080" timestamp="1629792266512" />
+<<<<<<< HEAD
     <state width="1878" height="301" key="GridCell.Tab.0.bottom" timestamp="1629878593091">
       <screen x="-1920" y="-33" width="1920" height="1080" />
     </state>
@@ -209,6 +215,27 @@
       <screen x="-1920" y="-33" width="1920" height="1080" />
     </state>
     <state width="1878" height="301" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-33.1920.1080@-1920.-33.1920.1080" timestamp="1629878593091" />
+=======
+    <state width="1878" height="301" key="GridCell.Tab.0.bottom" timestamp="1629874774308">
+      <screen x="-1920" y="-33" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="301" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-33.1920.1080@-1920.-33.1920.1080" timestamp="1629874774308" />
+    <state width="1878" height="305" key="GridCell.Tab.0.bottom/0.23.1440.877/-1920.-33.1920.1080@-1920.-33.1920.1080" timestamp="1629787377881" />
+    <state width="1878" height="301" key="GridCell.Tab.0.center" timestamp="1629874774306">
+      <screen x="-1920" y="-33" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="301" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-33.1920.1080@-1920.-33.1920.1080" timestamp="1629874774306" />
+    <state width="1878" height="305" key="GridCell.Tab.0.center/0.23.1440.877/-1920.-33.1920.1080@-1920.-33.1920.1080" timestamp="1629787377879" />
+    <state width="1878" height="301" key="GridCell.Tab.0.left" timestamp="1629874774305">
+      <screen x="-1920" y="-33" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="301" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-33.1920.1080@-1920.-33.1920.1080" timestamp="1629874774305" />
+    <state width="1878" height="305" key="GridCell.Tab.0.left/0.23.1440.877/-1920.-33.1920.1080@-1920.-33.1920.1080" timestamp="1629787377878" />
+    <state width="1878" height="301" key="GridCell.Tab.0.right" timestamp="1629874774307">
+      <screen x="-1920" y="-33" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="301" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-33.1920.1080@-1920.-33.1920.1080" timestamp="1629874774307" />
+>>>>>>> d62748338e2b79cc0dbb7783a693b7d08c5e19e9
     <state width="1878" height="305" key="GridCell.Tab.0.right/0.23.1440.877/-1920.-33.1920.1080@-1920.-33.1920.1080" timestamp="1629787377880" />
     <state width="1878" height="376" key="GridCell.Tab.1.bottom" timestamp="1629860319678">
       <screen x="-1920" y="-33" width="1920" height="1080" />
