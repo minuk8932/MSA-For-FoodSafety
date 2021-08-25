@@ -1,5 +1,6 @@
 package com.example.service;
 
+import com.example.repository.OpenApiRepository;
 import lombok.RequiredArgsConstructor;
 import org.json.simple.JSONObject;
 import org.springframework.stereotype.Service;
@@ -10,6 +11,8 @@ import java.util.concurrent.ExecutionException;
 @Service
 @RequiredArgsConstructor
 public class OpenApiServiceImpl implements OpenApiService {
+
+    private final OpenApiRepository openApiRepository;
 
     @Override
     public void updateByOpenApiData() throws ExecutionException, InterruptedException {
