@@ -10,16 +10,16 @@ import org.springframework.stereotype.Component;
 @PropertySource("classpath:openapi.yml")
 public class OpenApiConfig {
 
-    @Value("${apiAuthKey}")
+    @Value("${api-auth-key}")
     private String key;
 
-    @Value("${foodSafetyUrl}")
+    @Value("${food-safety-url}")
     private String url;
 
-    @Value("${nutrientDB}")
+    @Value("${nutrient-db}")
     private String nutrientServiceName;
 
-    @Value("${memorySize}")
+    @Value("${memory-size}")
     private int size;
 
 }
