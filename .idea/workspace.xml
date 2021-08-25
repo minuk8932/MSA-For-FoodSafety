@@ -23,11 +23,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="afa31d55-2b42-4787-b0ba-db5f2eefbb79" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/food-safety-api/src/main/java/com/example/FoodSafetyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/nutrient-api/src/main/java/com/example/NutrientApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/open-api/src/main/java/com/example/OpenApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/open-api/src/main/java/com/example/OpenApiApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/open-api/src/main/java/com/example/OpenApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/open-api-nutrient/src/main/java/com/example/OpenApiNutrientApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/open-api/src/main/java/com/example/models/Nutrients.java" beforeDir="false" afterPath="$PROJECT_DIR$/open-api-nutrient/src/main/java/com/example/models/Nutrients.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +108,7 @@
       <recent name="com.example.service" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.OpenApiApplication">
+  <component name="RunManager">
     <configuration name="NutrientApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.NutrientApplication" />
       <module name="food-safety-msa.food-safety-api.main" />
@@ -124,8 +122,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OpenApiApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.OpenApiApplication" />
+    <configuration name="OpenApiNutrientApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.OpenApiNutrientApplication" />
       <module name="food-safety-msa.open-api.main" />
       <extension name="coverage">
         <pattern>
@@ -139,7 +137,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.OpenApiApplication" />
+        <item itemvalue="Application.OpenApiNutrientApplication" />
         <item itemvalue="Application.NutrientApplication" />
       </list>
     </recent_temporary>
@@ -172,10 +170,10 @@
       <screen x="-1920" y="-33" width="1920" height="1080" />
     </state>
     <state x="-1230" y="338" key="#Notifications/0.0.1440.900/-1920.-33.1920.1080@-1920.-33.1920.1080" timestamp="1629784008340" />
-    <state x="-1147" y="220" key="#com.intellij.ide.util.MemberChooser" timestamp="1629786032220">
+    <state x="-1147" y="220" key="#com.intellij.ide.util.MemberChooser" timestamp="1629866431187">
       <screen x="-1920" y="-33" width="1920" height="1080" />
     </state>
-    <state x="-1147" y="220" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900/-1920.-33.1920.1080@-1920.-33.1920.1080" timestamp="1629786032220" />
+    <state x="-1147" y="220" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900/-1920.-33.1920.1080@-1920.-33.1920.1080" timestamp="1629866431187" />
     <state x="-1267" y="195" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1629792266512">
       <screen x="-1920" y="-33" width="1920" height="1080" />
     </state>
