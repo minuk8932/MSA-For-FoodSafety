@@ -27,7 +27,7 @@ public class LogAspect {
     @Around("execution(* com.example.service.*.*(..))")
     public Object serviceLogger(ProceedingJoinPoint joinPoint) throws Throwable {
         logger.info("start - " + joinPoint.getSignature().getDeclaringTypeName() + " / " + joinPoint.getSignature().getName());
-        
+
         Object result = joinPoint.proceed();
         logger.info("finished - " + joinPoint.getSignature().getDeclaringTypeName() + " / " + joinPoint.getSignature().getName());
 
