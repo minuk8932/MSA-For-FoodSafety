@@ -23,7 +23,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="afa31d55-2b42-4787-b0ba-db5f2eefbb79" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/open-api-nutrient/src/main/java/com/example/models/Nutrients.java" beforeDir="false" afterPath="$PROJECT_DIR$/open-api-nutrient/src/main/java/com/example/models/Nutrients.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,11 +55,6 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="food-safety-msa" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="food-safety-msa" type="f1a62948:ProjectNode" />
-                <item name="open-api" type="2d1252cf:ModuleNode" />
               </path>
             </expand>
             <select />
@@ -106,7 +103,7 @@
       <recent name="com.example.service" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.OpenApiNutrientApplication">
     <configuration name="NutrientApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.NutrientApplication" />
       <module name="food-safety-msa.food-safety-api.main" />
@@ -121,8 +118,9 @@
       </method>
     </configuration>
     <configuration name="OpenApiNutrientApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="INCLUDE_PROVIDED_SCOPE" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.example.OpenApiNutrientApplication" />
-      <module name="food-safety-msa.open-api.main" />
+      <module name="food-safety-msa.open-api-nutrient.main" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.example.*" />
@@ -172,29 +170,33 @@
       <screen x="-1920" y="-33" width="1920" height="1080" />
     </state>
     <state x="-1147" y="220" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900/-1920.-33.1920.1080@-1920.-33.1920.1080" timestamp="1629866431187" />
+    <state x="-1223" y="303" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1629870074947">
+      <screen x="-1920" y="-33" width="1920" height="1080" />
+    </state>
+    <state x="-1223" y="303" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1440.900/-1920.-33.1920.1080@-1920.-33.1920.1080" timestamp="1629870074947" />
     <state x="-1267" y="195" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1629792266512">
       <screen x="-1920" y="-33" width="1920" height="1080" />
     </state>
     <state x="-1267" y="195" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.900/-1920.-33.1920.1080@-1920.-33.1920.1080" timestamp="1629792266512" />
-    <state width="1878" height="301" key="GridCell.Tab.0.bottom" timestamp="1629863273585">
+    <state width="1878" height="301" key="GridCell.Tab.0.bottom" timestamp="1629870312274">
       <screen x="-1920" y="-33" width="1920" height="1080" />
     </state>
-    <state width="1878" height="301" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-33.1920.1080@-1920.-33.1920.1080" timestamp="1629863273585" />
+    <state width="1878" height="301" key="GridCell.Tab.0.bottom/0.0.1440.900/-1920.-33.1920.1080@-1920.-33.1920.1080" timestamp="1629870312274" />
     <state width="1878" height="305" key="GridCell.Tab.0.bottom/0.23.1440.877/-1920.-33.1920.1080@-1920.-33.1920.1080" timestamp="1629787377881" />
-    <state width="1878" height="301" key="GridCell.Tab.0.center" timestamp="1629863273583">
+    <state width="1878" height="301" key="GridCell.Tab.0.center" timestamp="1629870312269">
       <screen x="-1920" y="-33" width="1920" height="1080" />
     </state>
-    <state width="1878" height="301" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-33.1920.1080@-1920.-33.1920.1080" timestamp="1629863273583" />
+    <state width="1878" height="301" key="GridCell.Tab.0.center/0.0.1440.900/-1920.-33.1920.1080@-1920.-33.1920.1080" timestamp="1629870312269" />
     <state width="1878" height="305" key="GridCell.Tab.0.center/0.23.1440.877/-1920.-33.1920.1080@-1920.-33.1920.1080" timestamp="1629787377879" />
-    <state width="1878" height="301" key="GridCell.Tab.0.left" timestamp="1629863273582">
+    <state width="1878" height="301" key="GridCell.Tab.0.left" timestamp="1629870312268">
       <screen x="-1920" y="-33" width="1920" height="1080" />
     </state>
-    <state width="1878" height="301" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-33.1920.1080@-1920.-33.1920.1080" timestamp="1629863273582" />
+    <state width="1878" height="301" key="GridCell.Tab.0.left/0.0.1440.900/-1920.-33.1920.1080@-1920.-33.1920.1080" timestamp="1629870312268" />
     <state width="1878" height="305" key="GridCell.Tab.0.left/0.23.1440.877/-1920.-33.1920.1080@-1920.-33.1920.1080" timestamp="1629787377878" />
-    <state width="1878" height="301" key="GridCell.Tab.0.right" timestamp="1629863273584">
+    <state width="1878" height="301" key="GridCell.Tab.0.right" timestamp="1629870312273">
       <screen x="-1920" y="-33" width="1920" height="1080" />
     </state>
-    <state width="1878" height="301" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-33.1920.1080@-1920.-33.1920.1080" timestamp="1629863273584" />
+    <state width="1878" height="301" key="GridCell.Tab.0.right/0.0.1440.900/-1920.-33.1920.1080@-1920.-33.1920.1080" timestamp="1629870312273" />
     <state width="1878" height="305" key="GridCell.Tab.0.right/0.23.1440.877/-1920.-33.1920.1080@-1920.-33.1920.1080" timestamp="1629787377880" />
     <state width="1878" height="376" key="GridCell.Tab.1.bottom" timestamp="1629860319678">
       <screen x="-1920" y="-33" width="1920" height="1080" />

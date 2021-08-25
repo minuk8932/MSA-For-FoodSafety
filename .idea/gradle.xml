@@ -10,7 +10,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/nutrient-api" />
-            <option value="$PROJECT_DIR$/open-api" />
+            <option value="$PROJECT_DIR$/open-api-nutrient" />
           </set>
         </option>
       </GradleProjectSettings>

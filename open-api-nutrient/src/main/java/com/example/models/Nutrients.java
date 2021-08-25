@@ -14,15 +14,15 @@ import javax.persistence.Table;
 @NoArgsConstructor @AllArgsConstructor
 @Getter
 @Builder
-@Table(name = "foods", schema = "food_safety")
+@Table(name = "nutrients", schema = "food_safety_msa")
 public class Nutrients {
 
     @Id
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "food_name")
-    private String foodName;
+    @Column(name = "nutrient_name")
+    private String nutrientName;
 
     @Column(name = "category")
     private String category;
