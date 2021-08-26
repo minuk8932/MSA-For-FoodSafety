@@ -19,7 +19,7 @@ public class SchedulerConfig {
     private final JobBuilderFactory jobBuilderFactory;
     private final StepBuilderFactory stepBuilderFactory;
 
-    private final OpenApiServiceImpl nutrientService;
+    private final OpenApiServiceImpl recipeServiceImpl;
 
     @Bean(name = JOB_NAME)
     public Job openApiJob() {
@@ -29,11 +29,11 @@ public class SchedulerConfig {
                 .build();
     }
 
-    @Bean(name = JOB_NAME + "_Nutrient Open-API")
+    @Bean(name = JOB_NAME + "_Recipe Open-API")
     public Step step1() {
-        return stepBuilderFactory.get(JOB_NAME + "_Nutrient Open-API")
+        return stepBuilderFactory.get(JOB_NAME + "_Recipe Open-API")
                 .tasklet((contribution, chunkContext) -> {
-                    nutrientService.updateByOpenApiData();
+                    recipeServiceImpl.updateByOpenApiData();
 
                     return RepeatStatus.FINISHED;
                 })

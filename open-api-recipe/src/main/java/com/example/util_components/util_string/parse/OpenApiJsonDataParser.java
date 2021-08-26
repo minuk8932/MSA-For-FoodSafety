@@ -17,18 +17,17 @@ public class OpenApiJsonDataParser implements JsonParsable {
 
         JSONParser parser = new JSONParser();
 
-        return Stream.of(parser)
-                .map(p -> {
-                    try {
-                        return (JSONObject) p.parse(jsonText);
-                    } catch (Exception exception) {
-                        throw new JsonFormatInvalidException("잘못된 json 데이터 형식 입니다.");
-                    }
-                })
+        return Stream.of(parser).map(p -> {
+            try {
+                return (JSONObject) p.parse(jsonText);
+            } catch (Exception exception) {
+                throw new JsonFormatInvalidException("잘못된 json 데이터 형식 입니다.");
+            }
+        })
                 .map(json ->
                         (JSONObject) json.get(name))
                 .map(data ->
-                        (JSONArray) data.get(LIST_FLAG))
+                        data.get(LIST_FLAG))
                 .collect(Collectors.toCollection(JSONArray::new));
 
     }

@@ -16,8 +16,8 @@ public class OpenApiConfig {
     @Value("${food-safety-url}")
     private String url;
 
-    @Value("${nutrient-db}")
-    private String nutrientServiceName;
+    @Value("${recipe-db}")
+    private String recipeServiceName;
 
     @Value("${memory-size}")
     private int size;
