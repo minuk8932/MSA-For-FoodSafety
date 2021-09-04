@@ -1,20 +1,25 @@
 package com.example.util_components.util_string;
 
+import com.example.configuration.MsaLinkageConfig;
 import com.example.util_components.interfaces.string.UrlBuilder;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Component
+@RequiredArgsConstructor
 public class MicroServiceConnectUrlBuilder implements UrlBuilder {
 
+    private final MsaLinkageConfig linkageConfig;
+
     @Override
-    public String Urlbuilder(int port, List<String> paths) {
+    public String Urlbuilder() {
 
         StringBuffer buffer = new StringBuffer();
-        if(port != NULL) buffer.append(port).append(COLON);
+        if(linkageConfig.getPort() != NULL) buffer.append(linkageConfig.getPort()).append(COLON);
 
-        for(String path: paths) {
+        for(String path: linkageConfig.getPaths()) {
             buffer.append(FORWARD_SLASH).append(path);
         }
 
