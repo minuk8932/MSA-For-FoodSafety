@@ -3,7 +3,7 @@ package com.example.service;
 import com.example.configuration.OpenApiConfig;
 import com.example.model.ManualPairs;
 import com.example.model.Recipes;
-import com.example.repository.OpenApiRepository;
+import com.example.service.openapi.OpenApiServiceImpl;
 import com.example.util_components.util_connector.OpenApiConnectorByWebClient;
 import com.example.util_components.util_string.Casting;
 import com.example.util_components.util_string.parse.LastIndexTracker;
@@ -19,16 +19,14 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.UnknownContentTypeException;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class OpenApiServiceImpl implements OpenApiService {
-
-    private final OpenApiRepository openApiRepository;
+public class OpenApiLinkageServiceImpl implements OpenApiLinkageService {
 
     private final OpenApiConfig openApiConfig;
+    private final OpenApiServiceImpl openApiService;
 
     private final OpenApiJsonDataParser openApiJsonDataParser;
     private final OpenApiConnectorByWebClient byWebClient;
@@ -79,34 +77,15 @@ public class OpenApiServiceImpl implements OpenApiService {
 
                 Recipes apiData = (Recipes) jsonToModel(recipe);
 
-                if (isContainsField(apiData)) {
+                if (openApiService.isContainsField(apiData)) {
                     continue;
                 }
 
                 apiDataList.add(apiData);
             }
 
-            saveAll(apiDataList);
+            openApiService.saveAll(apiDataList);
         }
-    }
-
-    @Override
-    public void saveAll(List<?> list) {
-        if(list.size() == 0) return;
-
-        openApiRepository.saveAll(Arrays.asList(
-                list.stream()
-                        .toArray(Recipes[]::new)
-                        .clone()
-        ));
-    }
-
-    @Override
-    public boolean isContainsField(Object object) {
-        Recipes nutrient = (Recipes) object;
-        long id = nutrient.getId();
-
-        return openApiRepository.existsById(id);
     }
 
     @Override

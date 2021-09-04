@@ -9,8 +9,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/nutrient-api" />
             <option value="$PROJECT_DIR$/open-api-recipe" />
+            <option value="$PROJECT_DIR$/recipe-api" />
           </set>
         </option>
       </GradleProjectSettings>

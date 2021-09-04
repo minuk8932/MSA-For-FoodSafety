@@ -1,6 +1,6 @@
 package com.example.configuration.jobs;
 
-import com.example.service.OpenApiServiceImpl;
+import com.example.service.OpenApiLinkageServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
@@ -19,7 +19,7 @@ public class SchedulerConfig {
     private final JobBuilderFactory jobBuilderFactory;
     private final StepBuilderFactory stepBuilderFactory;
 
-    private final OpenApiServiceImpl recipeServiceImpl;
+    private final OpenApiLinkageServiceImpl recipeServiceImpl;
 
     @Bean(name = JOB_NAME)
     public Job openApiJob() {
