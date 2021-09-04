@@ -1,4 +1,4 @@
-package com.example.service.openapi;
+package com.example.service;
 
 import com.example.model.Recipes;
 import com.example.repository.OpenApiRepository;

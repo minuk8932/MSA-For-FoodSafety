@@ -1,7 +1,7 @@
 package com.example.controller;
 
 import com.example.model.Recipes;
-import com.example.service.openapi.OpenApiServiceImpl;
+import com.example.service.OpenApiServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
