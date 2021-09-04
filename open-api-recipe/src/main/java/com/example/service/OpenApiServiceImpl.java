@@ -2,7 +2,6 @@ package com.example.service;
 
 import com.example.model.Recipes;
 import com.example.repository.OpenApiRepository;
-import com.example.service.OpenApiService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
