@@ -18,7 +18,7 @@ public class ConnectorByWebClient implements Connectable {
 
     private final MicroServiceConnectUrlBuilder urlBuilder;
 
-    private final WebClient openApiWebClient;
+    private final WebClient msaLinkageWebClient;
 
     private static final Logger LOGGER = LoggerFactory.getLogger(JdbcTemplate.class);
 
@@ -28,7 +28,7 @@ public class ConnectorByWebClient implements Connectable {
 
         try {
 
-            remoteApiUrl = urlBuilder.Urlbuilder();
+            remoteApiUrl = urlBuilder.builder();
 
         }
         catch (Exception exception) {
@@ -37,7 +37,7 @@ public class ConnectorByWebClient implements Connectable {
 
         String finalRemoteApiUrl = remoteApiUrl;
 
-        return openApiWebClient
+        return msaLinkageWebClient
                 .get()
                 .uri(finalRemoteApiUrl)
                 .retrieve()

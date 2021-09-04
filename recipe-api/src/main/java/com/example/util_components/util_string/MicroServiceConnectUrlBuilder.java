@@ -14,14 +14,10 @@ public class MicroServiceConnectUrlBuilder implements UrlBuilder {
     private final MsaLinkageConfig linkageConfig;
 
     @Override
-    public String Urlbuilder() {
+    public String builder() {
 
         StringBuffer buffer = new StringBuffer();
-        if(linkageConfig.getPort() != NULL) buffer.append(linkageConfig.getPort()).append(COLON);
-
-        for(String path: linkageConfig.getPaths()) {
-            buffer.append(FORWARD_SLASH).append(path);
-        }
+        buffer.append(FORWARD_SLASH).append(linkageConfig.getPath());
 
         return buffer.toString();
 
