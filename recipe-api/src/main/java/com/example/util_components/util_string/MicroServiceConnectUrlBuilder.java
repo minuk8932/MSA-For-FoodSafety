@@ -14,7 +14,7 @@ public class MicroServiceConnectUrlBuilder implements UrlBuilder {
     private final MsaLinkageConfig linkageConfig;
 
     @Override
-    public String builder() {
+    public String buildUrlByBuffer() {
 
         StringBuffer buffer = new StringBuffer();
         buffer.append(FORWARD_SLASH).append(linkageConfig.getPath());

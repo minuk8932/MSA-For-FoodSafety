@@ -4,6 +4,6 @@ public interface UrlBuilder {
 
     String FORWARD_SLASH = "/";
 
-    String builder() ;
+    String buildUrlByBuffer() ;
 
 }
