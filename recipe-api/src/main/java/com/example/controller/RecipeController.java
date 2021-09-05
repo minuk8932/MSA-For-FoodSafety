@@ -32,7 +32,7 @@ public class RecipeController {
     private static final Logger LOGGER = LoggerFactory.getLogger(JdbcTemplate.class);
 
     @GetMapping("/recommend")
-    public ResponseEntity<List<Recipes>> menuRecommender(@RequestBody Map<String, Integer> ate) {
+    public ResponseEntity<List<Recipes>> recommendMenuByIngestedFood(@RequestBody Map<String, Integer> ate) {
         List<Recipes> recommend = null;
 
         try {
@@ -43,7 +43,7 @@ public class RecipeController {
             recommend = (List<Recipes>) recipeRecommendService.menuRecommender(remoteDataList, ingested);
 
         } catch (NullPointerException nullPointerException) {
-            LOGGER.error(">>> RecipeController >> exception >> ", nullPointerException, " >> wrong recipe list !!");
+            LOGGER.error(">>> Menu recommend >> exception >> ", nullPointerException, " >> wrong recipe list !!");
             nullPointerException.printStackTrace();
         }
 
