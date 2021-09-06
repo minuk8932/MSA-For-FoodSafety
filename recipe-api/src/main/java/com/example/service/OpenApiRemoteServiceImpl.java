@@ -3,7 +3,6 @@ package com.example.service;
 import com.example.exception.OpenApiDataIsNullException;
 import com.example.model.Recipes;
 import com.example.service.interfaces.OpenApiRemoteService;
-import com.example.util_components.util_string.MicroServiceConnectUrlBuilder;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
@@ -18,8 +17,6 @@ import java.util.List;
 @Service
 public class OpenApiRemoteServiceImpl implements OpenApiRemoteService {
 
-    private final MicroServiceConnectUrlBuilder urlBuilder;
-
     private final WebClient webClient;
 
     private final Logger logger = LoggerFactory.getLogger(JdbcTemplate.class);
@@ -30,7 +27,6 @@ public class OpenApiRemoteServiceImpl implements OpenApiRemoteService {
 
         List<Recipes> openApiDataList = webClient
                 .get()
-                .uri(urlBuilder.buildUrlByBuffer())
                 .retrieve()
                 .bodyToFlux(Recipes.class)
                 .collectList()

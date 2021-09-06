@@ -13,8 +13,8 @@ public class MsaLinkageConfig {
     @Value("${target-url}")
     private String url;
 
-    @Value("${target-path}")
-    private String path;
+    @Value("${origin-url}")
+    private String redirect;
 
     @Value("${memory-size}")
     private int size;
