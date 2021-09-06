@@ -6,10 +6,12 @@ import com.example.service.interfaces.OpenApiRemoteService;
 import com.example.util_components.util_string.MicroServiceConnectUrlBuilder;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -18,13 +20,15 @@ public class OpenApiRemoteServiceImpl implements OpenApiRemoteService {
 
     private final MicroServiceConnectUrlBuilder urlBuilder;
 
-    private final WebClient msaLinkageWebClient;
+    private final WebClient webClient;
+
+    private final Logger logger = LoggerFactory.getLogger(JdbcTemplate.class);
 
     @Override
-    @HystrixCommand(fallbackMethod = "getOpenApiDataListFallback")
+    @HystrixCommand(commandKey = "recipeInfo", fallbackMethod = "getOpenApiDataListFallback")
     public List<Recipes> getOpenApiDataList() {
 
-        List<Recipes> openApiDataList = msaLinkageWebClient
+        List<Recipes> openApiDataList = webClient
                 .get()
                 .uri(urlBuilder.buildUrlByBuffer())
                 .retrieve()
@@ -36,7 +40,8 @@ public class OpenApiRemoteServiceImpl implements OpenApiRemoteService {
 
     }
 
-    public List<Recipes> getOpenApiDataListFallback() {
+    public List<Recipes> getOpenApiDataListFallback(Throwable throwable) {
+        logger.error("Exception >> Linkage open-API >> ", throwable);
         throw new OpenApiDataIsNullException("Open API 데이터를 가져올 수 없습니다.");
     }
 }

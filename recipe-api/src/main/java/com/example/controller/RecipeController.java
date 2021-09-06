@@ -1,6 +1,5 @@
 package com.example.controller;
 
-import com.example.exception.OpenApiDataIsNullException;
 import com.example.model.Recipes;
 import com.example.service.NutrientElementsServiceImpl;
 import com.example.service.OpenApiRemoteServiceImpl;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 

@@ -3,6 +3,7 @@ package com.example.configuration.web_client;
 import com.example.configuration.MsaLinkageConfig;
 import lombok.RequiredArgsConstructor;
 import org.apache.http.HttpHeaders;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
@@ -15,6 +16,7 @@ public class WebClientConfig {
 
     private final MsaLinkageConfig linkageConfig;
 
+    @LoadBalanced
     @Bean
     public WebClient msaLinkageWebClient() {
 
@@ -27,7 +29,8 @@ public class WebClientConfig {
                 )
                 .build();
 
-        return WebClient.builder().baseUrl(linkageConfig.getUrl())
+        return WebClient.builder()
+                .baseUrl(linkageConfig.getUrl())
                 .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                 .exchangeStrategies(exchangeStrategies)
                 .build();
