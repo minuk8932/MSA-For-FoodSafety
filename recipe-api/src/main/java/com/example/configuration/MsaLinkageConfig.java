@@ -10,11 +10,8 @@ import org.springframework.stereotype.Component;
 @PropertySource("classpath:msa-linkage.yml")
 public class MsaLinkageConfig {
 
-    @Value("${target-url}")
+    @Value("${url}")
     private String url;
-
-    @Value("${origin-url}")
-    private String redirect;
 
     @Value("${memory-size}")
     private int size;

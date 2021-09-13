@@ -25,15 +25,12 @@ public class OpenApiRemoteServiceImpl implements OpenApiRemoteService {
     @HystrixCommand(commandKey = "recipeInfo", fallbackMethod = "getOpenApiDataListFallback")
     public List<Recipes> getOpenApiDataList() {
 
-        List<Recipes> openApiDataList = webClient
+        return webClient
                 .get()
                 .retrieve()
                 .bodyToFlux(Recipes.class)
                 .collectList()
                 .block();
-
-        return openApiDataList;
-
     }
 
     public List<Recipes> getOpenApiDataListFallback(Throwable throwable) {

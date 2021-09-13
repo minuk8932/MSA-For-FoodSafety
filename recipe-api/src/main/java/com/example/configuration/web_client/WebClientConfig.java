@@ -30,22 +30,11 @@ public class WebClientConfig {
                                 configurator
                                         .defaultCodecs()
                                         .maxInMemorySize(linkageConfig.getSize())
+
                 )
                 .build();
 
-        URI redirectURL = new URI(linkageConfig.getRedirect());
-
         return WebClient.builder()
-                .baseUrl(linkageConfig.getUrl())
-                .filter((request, next) -> {
-
-                    ClientRequest filtered = ClientRequest
-                                .from(request)
-                                .url(redirectURL)
-                                .build();
-
-                    return next.exchange(filtered);
-                })
                 .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                 .exchangeStrategies(exchangeStrategies)
                 .build();
