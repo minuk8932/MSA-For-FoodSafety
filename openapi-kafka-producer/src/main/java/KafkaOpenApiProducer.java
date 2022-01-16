@@ -1,5 +1,3 @@
-package com.example.kafka;
-
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
@@ -9,9 +7,9 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Properties;
 
-public class OpenApiDataProducer {
+public class KafkaOpenApiProducer {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(OpenApiDataProducer.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(KafkaOpenApiProducer.class);
     private static final String TOPIC_NAME = "Recipe-OpenApi";
     private static final String BOOTSTRAP_SERVERS = "15.164.86.196:9092";
 
