@@ -13,7 +13,7 @@ public class OpenApiDataProducer {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(OpenApiDataProducer.class);
     private static final String TOPIC_NAME = "Recipe-OpenApi";
-    private static final String BOOTSTRAP_SERVERS = "openapi-kafka:9092";
+    private static final String BOOTSTRAP_SERVERS = "15.164.86.196:9092";
 
     public static void main(String[] args) {
 

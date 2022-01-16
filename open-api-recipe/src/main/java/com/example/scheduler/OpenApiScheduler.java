@@ -25,8 +25,7 @@ public class OpenApiScheduler {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(JdbcTemplate.class);
 
-//    @Scheduled(cron = "0 0 4 * * *")
-    @Scheduled(cron = "* * * * * *")
+    @Scheduled(cron = "0 0 4 * * *")
     public void executeOpenApiConnection() {
 
         try {
