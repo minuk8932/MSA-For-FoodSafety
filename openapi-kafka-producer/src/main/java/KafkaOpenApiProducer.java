@@ -23,8 +23,10 @@ public class KafkaOpenApiProducer {
 
         KafkaProducer<String, String> producer = new KafkaProducer<>(configs);
 
-        String messageValue = "testMessage";
-        ProducerRecord<String, String> record = new ProducerRecord<>(TOPIC_NAME, messageValue);
+        String messageValue = "recipeData";
+        String messageKey = "Open-Api";
+        int partitionNo = 0;
+        ProducerRecord<String, String> record = new ProducerRecord<>(TOPIC_NAME, partitionNo, messageKey, messageValue);
 
         producer.send(record);
         LOGGER.info("{}", record);
