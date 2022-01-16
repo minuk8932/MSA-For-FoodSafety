@@ -6,6 +6,10 @@ import com.example.util_components.util_string.OpenApiUrlBuilder;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
+import reactor.core.Disposable;
+import reactor.core.publisher.Mono;
+
+import java.util.HashMap;
 
 @Component
 @RequiredArgsConstructor
@@ -29,7 +33,8 @@ public class OpenApiConnectorByWebClient implements Connectable {
             throw new JsonUnsupportedEncoding("지원되지 않는 Encoding 형식입니다.");
         }
 
-        return openApiWebClient.get()
+        return openApiWebClient
+                .get()
                 .uri(openApiUrl)
                 .retrieve()
                 .bodyToMono(String.class)

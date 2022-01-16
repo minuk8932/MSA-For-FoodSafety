@@ -1,5 +1,7 @@
 package com.example.util_components.interfaces.connecting;
 
+import reactor.core.publisher.Mono;
+
 public interface Connectable {
 
     String STATUS_CODE = "statusCode";
