@@ -11,7 +11,7 @@ import org.springframework.kafka.support.SendResult;
 import org.springframework.util.concurrent.ListenableFuture;
 
 @SpringBootApplication
-public class KafkaOpenApiProducer implements CommandLineRunner {
+public class KafkaOpenApiProducerApplication implements CommandLineRunner {
 
     @Autowired
     private KafkaTemplate<String, String> customKafkaTemplate;
@@ -19,10 +19,7 @@ public class KafkaOpenApiProducer implements CommandLineRunner {
     private final String TOPIC_NAME = "Recipe-OpenApi";
 
     public static void main(String[] args) {
-
-        SpringApplication application = new SpringApplication(KafkaOpenApiProducer.class);
-        application.run(args);
-
+        SpringApplication.run(KafkaOpenApiProducerApplication.class);
     }
 
     @Override
