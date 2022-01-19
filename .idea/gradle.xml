@@ -14,8 +14,6 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/eureka-server" />
             <option value="$PROJECT_DIR$/open-api-recipe" />
-            <option value="$PROJECT_DIR$/openapi-kafka-consumer" />
-            <option value="$PROJECT_DIR$/openapi-kafka-producer" />
             <option value="$PROJECT_DIR$/recipe-api" />
           </set>
         </option>
