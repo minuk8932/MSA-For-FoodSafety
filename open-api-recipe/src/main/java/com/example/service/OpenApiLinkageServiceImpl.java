@@ -74,7 +74,6 @@ public class OpenApiLinkageServiceImpl implements OpenApiLinkageService {
 
             for(Object json: jsonRecipe) {
                 JSONObject recipe = (JSONObject) json;
-
                 Recipes apiData = (Recipes) jsonToModel(recipe);
 
                 if (openApiService.isContainsField(apiData)) {
@@ -84,7 +83,8 @@ public class OpenApiLinkageServiceImpl implements OpenApiLinkageService {
                 apiDataList.add(apiData);
             }
 
-            openApiService.saveAll(apiDataList);
+//            openApiService.saveAll(apiDataList);
+            openApiService.produceAll(apiDataList);
         }
     }
 
