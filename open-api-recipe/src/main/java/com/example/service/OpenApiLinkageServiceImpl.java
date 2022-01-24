@@ -83,8 +83,8 @@ public class OpenApiLinkageServiceImpl implements OpenApiLinkageService {
                 apiDataList.add(apiData);
             }
 
-//            openApiService.saveAll(apiDataList);
-            openApiService.produceAll(apiDataList);
+            openApiService.saveAll(apiDataList);
+//            openApiService.produceAll(apiDataList);
         }
     }
 

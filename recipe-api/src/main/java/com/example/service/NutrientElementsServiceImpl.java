@@ -50,6 +50,7 @@ public class NutrientElementsServiceImpl implements NutrientElementsService {
         for(Map.Entry<String, Integer> entry: ate.entrySet()) {
             String category = entry.getKey();
             int amount = entry.getValue();
+
             if(!categories.containsKey(category)) return null;
 
             List<Double> nutrientList = ingestedNutrientsCategoryArranger(categories.get(category))

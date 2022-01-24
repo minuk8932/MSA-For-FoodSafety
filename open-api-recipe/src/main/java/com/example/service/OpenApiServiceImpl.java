@@ -1,19 +1,15 @@
 package com.example.service;
 
-import com.example.controller.OpenApiRecipeController;
 import com.example.model.Recipes;
 import com.example.repository.OpenApiRepository;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.concurrent.ListenableFutureCallback;
-import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.Arrays;
 import java.util.List;
@@ -23,6 +19,7 @@ import java.util.List;
 public class OpenApiServiceImpl implements OpenApiService {
 
     private final Logger LOGGER = LoggerFactory.getLogger(OpenApiServiceImpl.class);
+    private final String RECIPE_TOPIC = "recipe-openapi";
 
     private final OpenApiRepository openApiRepository;
     private final KafkaTemplate<String, Recipes> kafkaTemplate;
@@ -39,7 +36,7 @@ public class OpenApiServiceImpl implements OpenApiService {
     }
 
     @Override
-    public void produceAll(List<?> list) {
+    public void produceAll(List<?> list) {      // for kafka
         if(list.size() == 0) return;
 
         final String[] response = {""};
@@ -47,7 +44,7 @@ public class OpenApiServiceImpl implements OpenApiService {
         list
                 .stream()
                 .forEach(recipes ->
-                        kafkaTemplate.send("open-api topic", (Recipes) recipes).addCallback(
+                        kafkaTemplate.send(RECIPE_TOPIC, (Recipes) recipes).addCallback(
                                 new ListenableFutureCallback<SendResult<String, Recipes>>() {
                                     @Override
                                     public void onFailure(Throwable ex) {

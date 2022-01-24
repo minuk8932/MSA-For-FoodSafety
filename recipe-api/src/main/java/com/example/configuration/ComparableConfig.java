@@ -8,20 +8,23 @@ import org.springframework.stereotype.Component;
 @Component
 @Getter
 @RequiredArgsConstructor
-public class ComparableConfig implements Comparable<ComparableConfig>{
+public class ComparableConfig {
 
     private Recipes recipes;
 
     private double similarity;
 
-    public ComparableConfig(Recipes field, double similarity) {
-        this.recipes = field;
+    public ComparableConfig(Recipes recipes, double similarity) {
+        this.recipes = recipes;
         this.similarity = similarity;
     }
 
-    @Override
-    public int compareTo(ComparableConfig cc) {
-        return this.similarity > cc.similarity ? -1: 1;
+    public Recipes getRecipes() {
+        return recipes;
+    }
+
+    public double getSimilarity() {
+        return 1 - similarity;
     }
 
 }

@@ -6,10 +6,9 @@ import com.example.service.interfaces.RecipeRecommendService;
 import com.example.util_components.util_math.CosineSimilarity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import reactor.core.publisher.Mono;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.PriorityQueue;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -20,33 +19,36 @@ public class RecipeRecommendServiceImpl implements RecipeRecommendService {
     private final CosineSimilarity cosineSimilarity;
 
     @Override
-    public List<?> menuRecommender(List<Recipes> fields, double[] ingested) {
+    public Mono<Recipes> menuRecommender(Mono<List<Recipes>> fields, double[] ingested) {
 
-        PriorityQueue<ComparableConfig> similar = new PriorityQueue<>();
+        return fields.map(field -> {
 
-        for (Recipes field: fields) {
+            PriorityQueue<ComparableConfig> similar = new PriorityQueue<>(
+                    Comparator.comparing(ComparableConfig::getSimilarity));
 
-            double[] contains = new double[NUTRIENT_TYPES];
-            List<Object> nutrientList = categorize(field);
+            for (Recipes recipe: field) {
 
-            int index = 0;
-            for(Object ing: nutrientList) {
-                contains[index++] += Double.parseDouble(ing.toString());
+                double[] contains = new double[NUTRIENT_TYPES];
+                List<Object> nutrientList = categorize(recipe);
+
+                int index = 0;
+                for(Object ing: nutrientList) {
+                    contains[index++] = Double.parseDouble(ing.toString());
+                }
+
+                double scalar = cosineSimilarity.scalarProduct(ingested, contains);
+                double vector = cosineSimilarity.vectorProduct(ingested, contains);
+
+                if(scalar == 0) continue;
+                similar.offer(new ComparableConfig(recipe, cosineSimilarity.division(vector, scalar)));
+
             }
 
-            double scalar = cosineSimilarity.scalarProduct(ingested, contains);
-            double vector = cosineSimilarity.vectorProduct(ingested, contains);
+            return similar;
 
-            similar.offer(new ComparableConfig(field, cosineSimilarity.division(vector, scalar)));
-
-        }
-
-        int size = Math.min(PACK, similar.size());
-        return Arrays
-                .stream(similar.toArray())
-                .map(i -> similar.poll().getRecipes())
-                .limit(size)
-                .collect(Collectors.toList());
+        })
+        .map(similar ->
+                Objects.requireNonNull(similar.poll()).getRecipes());
 
     }
 
