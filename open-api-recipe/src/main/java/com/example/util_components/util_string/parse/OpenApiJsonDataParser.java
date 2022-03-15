@@ -42,7 +42,7 @@ public class OpenApiJsonDataParser implements JsonParsable {
                     try {
                         return (JSONObject) p.parse(jsonText);
                     } catch (Exception exception) {
-                        throw new JsonFormatInvalidException("잘못된 json 데이터 형식 입니다.");
+                        throw new JsonFormatInvalidException(jsonText + " 는 잘못된 json 데이터 형식 입니다.");
                     }
                 })
                 .map(json ->

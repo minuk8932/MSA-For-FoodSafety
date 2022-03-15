@@ -1,6 +1,7 @@
 package com.example.util_components.util_string.parse;
 
 import com.example.util_components.util_connector.OpenApiConnectorByWebClient;
+import java.util.concurrent.atomic.AtomicInteger;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Mono;
@@ -15,12 +16,15 @@ public class LastIndexTracker {
 
     public int findTag(String key, String name) {
 
-        String jsonText = byWebClient
+        Mono<String> jsonText = byWebClient
                 .requestOpenApiData(key, name, 1, 2);
 
-        return jsonDataParser
-                .onlyTakeIndex(name, jsonText);
+        AtomicInteger index = new AtomicInteger();
+        jsonText.subscribe(text ->
+            index.set(jsonDataParser.onlyTakeIndex(name, text))
+        );
 
+        return index.get();
     }
 
 }

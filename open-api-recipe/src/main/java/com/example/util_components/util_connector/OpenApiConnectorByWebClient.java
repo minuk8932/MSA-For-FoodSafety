@@ -20,7 +20,7 @@ public class OpenApiConnectorByWebClient implements Connectable {
     private final WebClient openApiWebClient;
 
     @Override
-    public String requestOpenApiData(String key, String name, int start, int end) {
+    public Mono<String> requestOpenApiData(String key, String name, int start, int end) {
 
         String openApiUrl;
 
@@ -37,8 +37,7 @@ public class OpenApiConnectorByWebClient implements Connectable {
                 .get()
                 .uri(openApiUrl)
                 .retrieve()
-                .bodyToMono(String.class)
-                .block();
+                .bodyToMono(String.class);
 
     }
 
