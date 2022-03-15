@@ -8,6 +8,6 @@ public interface Connectable {
     String HEADER = "header";
     String BODY = "body";
 
-    String requestOpenApiData(String key, String name, int start, int end);
+    Mono<String> requestOpenApiData(String key, String name, int start, int end);
 
 }

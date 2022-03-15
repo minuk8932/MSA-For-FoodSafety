@@ -42,7 +42,7 @@ public class OpenApiLinkageServiceImpl implements OpenApiLinkageService {
         int end = INTERVAL;
 
         final int SIZE = indexTracker.findTag(openApiConfig.getKey(), openApiConfig.getRecipeServiceName());
-        List<String> responses = new ArrayList<>();
+        List<Mono<String>> responses = new ArrayList<>();
 
         while(start <= SIZE) {
             end = Math.min(end, SIZE);
@@ -62,10 +62,11 @@ public class OpenApiLinkageServiceImpl implements OpenApiLinkageService {
             end += INTERVAL;
         }
 
-        for(String response: responses) {
+        for(Mono<String> response: responses) {
 
-            JSONArray jsonRecipe = openApiJsonDataParser
-                    .jsonDataParser(openApiConfig.getRecipeServiceName(), response);
+            JSONArray jsonRecipe = null;
+            response.subscribe(resp -> openApiJsonDataParser
+                .jsonDataParser(openApiConfig.getRecipeServiceName(), resp));
 
             if(jsonRecipe == null) break;
             List<Recipes> apiDataList = new ArrayList<>();
